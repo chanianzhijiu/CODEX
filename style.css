@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Zen Maru Gothic", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at top, #143b5a, #041524 70%);
+  color: #e6f7ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-shell {
+  width: min(1400px, 96vw);
+  background: rgba(4, 17, 32, 0.85);
+  border: 1px solid rgba(103, 192, 255, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hud {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  background: linear-gradient(90deg, rgba(22, 71, 102, 0.9), rgba(8, 31, 54, 0.9));
+}
+
+.hud__block h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.hud__subtitle {
+  font-size: 14px;
+  color: rgba(230, 247, 255, 0.7);
+  margin-top: 4px;
+}
+
+.hud__stats {
+  display: flex;
+  gap: 16px;
+}
+
+.hud__stats div {
+  background: rgba(6, 34, 58, 0.6);
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hud__stats span {
+  display: block;
+  font-size: 12px;
+  color: rgba(230, 247, 255, 0.6);
+}
+
+.hud__stats strong {
+  font-size: 20px;
+}
+
+.hud__actions button {
+  background: #1c8cd9;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hud__actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 140, 217, 0.35);
+}
+
+.game-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+  gap: 20px;
+  padding: 24px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(103, 192, 255, 0.2);
+  background: radial-gradient(circle at 20% 20%, rgba(34, 116, 163, 0.4), rgba(7, 18, 32, 0.8));
+}
+
+.panel {
+  background: rgba(9, 30, 50, 0.8);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(103, 192, 255, 0.2);
+}
+
+.panel h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.panel ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(230, 247, 255, 0.75);
+}
+
+.tips {
+  padding: 16px 28px;
+  font-size: 14px;
+  background: rgba(4, 21, 36, 0.8);
+  border-top: 1px solid rgba(103, 192, 255, 0.2);
+}
+
+@media (max-width: 960px) {
+  .hud {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-stage {
+    grid-template-columns: 1fr;
+  }
+}

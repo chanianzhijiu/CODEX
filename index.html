@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大鱼吃小鱼 - 海域冒险</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="hud">
+        <div class="hud__block">
+          <h1>大鱼吃小鱼</h1>
+          <p class="hud__subtitle">吞噬、进化、探索多生态海域。</p>
+        </div>
+        <div class="hud__block hud__stats">
+          <div><span>体型</span><strong id="sizeStat">1</strong></div>
+          <div><span>等级</span><strong id="levelStat">1</strong></div>
+          <div><span>连击</span><strong id="comboStat">0</strong></div>
+        </div>
+        <div class="hud__block hud__actions">
+          <button id="pauseBtn">暂停</button>
+          <button id="restartBtn">重新开始</button>
+        </div>
+      </header>
+      <main class="game-stage">
+        <canvas id="gameCanvas" width="1280" height="720"></canvas>
+        <aside class="panel">
+          <section>
+            <h2>玩法亮点</h2>
+            <ul>
+              <li>超过 40 种鱼类，在不同海域刷新。</li>
+              <li>连击加成、狂暴冲刺、磁吸技能。</li>
+              <li>海流、热泉、海草区影响速度与视野。</li>
+            </ul>
+          </section>
+          <section>
+            <h2>控制</h2>
+            <ul>
+              <li>移动：W/A/S/D 或方向键</li>
+              <li>冲刺：空格（消耗能量）</li>
+              <li>技能：Q/E 切换技能</li>
+            </ul>
+          </section>
+          <section>
+            <h2>生态热点</h2>
+            <ul id="zoneList"></ul>
+          </section>
+        </aside>
+      </main>
+      <footer class="tips">
+        <p id="tipText">提示：连续吞噬小鱼可快速提升连击倍率。</p>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
